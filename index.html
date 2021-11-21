@@ -55,7 +55,7 @@
                      </div>
                      <ul>
                         <li><a class="scroll" href="#home">爱的首页</a></li>
-                        <li><a class="scroll" href="#story">爱的故事</a></li>
+                        <li><a class="scroll" href="#story">爱的宣言</a></li>
                         <li><a class="scroll" href="#album">爱的相册</a></li>
                      </ul>
                   </nav>
@@ -137,7 +137,7 @@
                   </div>
                   <div class="col-sm-5 ">
                      <div class="couple-story text-right">
-                        <p>之前我不相信一见钟情，但是见到你的那一刻，我否定了我的看法。我的心为你沦陷，从此只为你跳动</p>
+                        <p>各自陪伴,各自坚持,未来很光明也很长久,所以我们也要长长久久</p>
                      </div>
                   </div>
                   <div class="col-sm-5 col-sm-offset-2">
@@ -299,7 +299,7 @@
         <a class="c-white fs-12 icon-play rotate" id="btn-play" href="javascript:void(0);"></a>
     </div>
 	 <script type="text/javascript">
-    //获取picid函数
+    
     $(function(){
         $("area").click(function(){
            var  picId=$(this).attr("data-id");
@@ -324,7 +324,7 @@
     <script>
     function autoPlayAudio1() {
         wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
+           
             debug: false,
             appId: '',
             timestamp: 1,
@@ -336,7 +336,7 @@
             document.getElementById('main_audio').play();
         });
     }
-    autoPlayAudio1(); // 推荐使用方法1
+    autoPlayAudio1(); 
     </script>
 	<bgsound src="http://www.51bbw.cn/mp3/1youdiantian.mp3" loop="-1"/>
 <audio src="http://www.51bbw.cn/mp3/1youdiantian.mp3" controls autoplay='autoplay' loop="loop" id="bgmusic" style="display:none"></audio>
@@ -347,8 +347,8 @@
             // alert(info);
         }
         function forceSafariPlayAudio() {
-            audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
-            audioEl.play(); // iOS 7/8 仅需要 play 一下
+            audioEl.load();
+            audioEl.play(); 
         }
 
         var audioEl = document.getElementById('bgmusic');
@@ -366,8 +366,7 @@
             log('canplay');
         }, false);
         audioEl.addEventListener('play', function() {
-            log('play');
-            // 当 audio 能够播放后, 移除这个事件
+            log('play')
             window.removeEventListener('touchstart', forceSafariPlayAudio, false);
         }, false);
         audioEl.addEventListener('playing', function() {
@@ -376,9 +375,6 @@
         audioEl.addEventListener('pause', function() {
             log('pause');
         }, false);
-
-        // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
-        // 因此我们通过一个用户交互事件来主动 play 一下 audio.
         window.addEventListener('touchstart', forceSafariPlayAudio, false);
 
         audioEl.src = "http://www.51bbw.cn/mp3/1youdiantian.mp3";
